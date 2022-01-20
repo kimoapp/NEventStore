@@ -7,7 +7,7 @@ properties {
     $packages_directory = "$src_directory\packages"
     $sln_file = "$src_directory\NEventStore.sln"
     $target_config = "Release"
-    $framework_version = "v4.0"
+    $framework_version = "v4.7.2"
     $build_number = 0
     $assemblyInfoFilePath = "$src_directory\VersionAssemblyInfo.cs"
 
@@ -34,7 +34,7 @@ task UpdateVersion {
 
 task Compile {
 	exec { msbuild /nologo /verbosity:quiet $sln_file /p:Configuration=$target_config /t:Clean }
-	exec { msbuild /nologo /verbosity:quiet $sln_file /p:Configuration=$target_config /p:TargetFrameworkVersion=v4.0 }
+	exec { msbuild /nologo /verbosity:quiet $sln_file /p:Configuration=$target_config /p:TargetFrameworkVersion=v4.7.2 }
 }
 
 task Test -depends RunUnitTests, RunPersistenceTests, RunSerializationTests
